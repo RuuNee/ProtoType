@@ -9,20 +9,20 @@ public class player : MonoBehaviour
     [SerializeField] private GameObject textPanel;
     [SerializeField] private Image image;
     [SerializeField] private GameObject food;
+    [SerializeField] Camera cam;
 
     Animator animator;
     Vector3 movement;
     Rigidbody rigidbody;
-    Camera cam;
+    bool isClick = false;
 
     public float speed = 5.0f;
-
     public static bool isKey = false;
     public static List<GameObject> objList;
+
     void Start()
     {
         objList = new List<GameObject>();
-        cam = GetComponentInChildren<Camera>();
         animator = GetComponent<Animator>();
         rigidbody = GetComponent<Rigidbody>(); 
     }
@@ -74,7 +74,7 @@ public class player : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if(other.gameObject.tag == "npc")
+        if(other.CompareTag("npc"))
         {
             image.gameObject.SetActive(true);
 
@@ -85,26 +85,24 @@ public class player : MonoBehaviour
             }
         }
 
-        if(other.tag == "object")
+        if(other.CompareTag("object"))
         {
             image.gameObject.SetActive(true);
 
-            if (Input.GetKeyDown(KeyCode.F))
-            {
+            if (Input.GetKey(KeyCode.F))
                 Destroy(other.gameObject);
-            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "npc")
+        if (other.CompareTag("npc"))
         {
             image.gameObject.SetActive(false);
             textPanel.SetActive(false);
         }
 
-        if(other.gameObject.tag == "object")
+        if (other.CompareTag("object"))
             image.gameObject.SetActive(false);
     }
 }

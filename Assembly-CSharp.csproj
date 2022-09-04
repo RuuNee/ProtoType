@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{9C7578AA-F7D4-76E8-AD0E-6037528B2038}</ProjectGuid>
+    <ProjectGuid>{241B9DD2-A380-45A4-8B10-97F28ACB9CDA}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -56,12 +56,12 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Script\npc.cs" />
     <Compile Include="Assets\Script\playerController.cs" />
+    <Compile Include="Assets\Script\ingredient.cs" />
     <Compile Include="Assets\Script\player.cs" />
     <Compile Include="Assets\Script\InputController.cs" />
     <Compile Include="Assets\Script\portal.cs" />
-    <Compile Include="Assets\Script\npc.cs" />
-    <Compile Include="Assets\Script\ingredient.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
